@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <ctime>
+#include <ctime>Â 
 #include <cmath>
 #include <algorithm>
 
@@ -14,8 +14,8 @@ private:
 
 public:
     Complex() {
-        real = 0;
-        imag = 0;
+        real = 0;Â 
+        imag = 0;Â 
     }
 
     Complex(double r, double i) {
@@ -39,23 +39,23 @@ public:
         imag = i;
     }
 
-    // ¼ÆËã¸´ÊıµÄÄ£
+    // è®¡ç®—å¤æ•°çš„æ¨¡
     double modulus() const {
         return sqrt(real * real + imag * imag);
     }
 
-    // ÖØÔØÔËËã·û ==
+    // é‡è½½è¿ç®—ç¬¦ ==
     friend bool operator==(const Complex& c1, const Complex& c2) {
         return c1.real == c2.real && c1.imag == c2.imag;
     }
 
-    // ÖØÔØÔËËã·û <<
+    // é‡è½½è¿ç®—ç¬¦ <<
     friend ostream& operator<<(ostream& out, const Complex& c) {
         out << c.real << "+" << c.imag << "i";
         return out;
     }
 
-    // ÖØÔØÔËËã·û <
+    // é‡è½½è¿ç®—ç¬¦ <
     friend bool operator<(const Complex& c1, const Complex& c2) {
         if (c1.modulus() != c2.modulus()) {
             return c1.modulus() < c2.modulus();
@@ -63,13 +63,13 @@ public:
         return c1.real < c2.real;
     }
 
-    // ÖØÔØÔËËã·û >
+    // é‡è½½è¿ç®—ç¬¦ >
     friend bool operator>(const Complex& c1, const Complex& c2) {
         return c2 < c1;
     }
 };
 
-// ÖÃÂÒ
+// ç½®ä¹±
 void shuffle(vector<Complex>& vec) {
     srand(time(NULL));
     int n = vec.size();
@@ -79,7 +79,7 @@ void shuffle(vector<Complex>& vec) {
     }
 }
 
-// ²éÕÒ
+// æŸ¥æ‰¾
 int find(const vector<Complex>& vec, const Complex& c) {
     int n = vec.size();
     for (int i = 0; i < n; i++) {
@@ -90,12 +90,12 @@ int find(const vector<Complex>& vec, const Complex& c) {
     return -1;
 }
 
-// ²åÈë
+// æ’å…¥
 void insert(vector<Complex>& vec, const Complex& c) {
     vec.push_back(c);
 }
 
-// É¾³ı
+// åˆ é™¤
 void remove(vector<Complex>& vec, const Complex& c) {
     int n = vec.size();
     for (int i = 0; i < n; i++) {
@@ -106,7 +106,7 @@ void remove(vector<Complex>& vec, const Complex& c) {
     }
 }
 
-// Î¨Ò»»¯
+// å”¯ä¸€åŒ–
 void unique(vector<Complex>& vec) {
     int n = vec.size();
     for (int i = 0; i < n; i++) {
@@ -120,12 +120,12 @@ void unique(vector<Complex>& vec) {
     }
 }
 
-// ÄæĞòº¯Êı
+// é€†åºå‡½æ•°
 void reverseComplex(vector<Complex>& vec) {
     std::reverse(vec.begin(), vec.end());
 }
 
-// ÆğÅİÅÅĞò
+// èµ·æ³¡æ’åº
 void bubbleSort(vector<Complex>& vec) {
     int n = vec.size();
     for (int i = 0; i < n - 1; i++) {
@@ -137,7 +137,7 @@ void bubbleSort(vector<Complex>& vec) {
     }
 }
 
-// ¹é²¢ÅÅĞò¸¨Öúº¯Êı
+// å½’å¹¶æ’åºè¾…åŠ©å‡½æ•°
 void merge(vector<Complex>& vec, int left, int mid, int right) {
     int n1 = mid - left + 1;
     int n2 = right - mid;
@@ -175,7 +175,7 @@ void merge(vector<Complex>& vec, int left, int mid, int right) {
     }
 }
 
-// ¹é²¢ÅÅĞò
+// å½’å¹¶æ’åº
 void mergeSort(vector<Complex>& vec, int left, int right) {
     if (left < right) {
         int mid = left + (right - left) / 2;
@@ -187,7 +187,7 @@ void mergeSort(vector<Complex>& vec, int left, int right) {
     }
 }
 
-// Çø¼ä²éÕÒ
+// åŒºé—´æŸ¥æ‰¾
 vector<Complex> rangeSearch(const vector<Complex>& vec, double m1, double m2) {
     vector<Complex> result;
     for (const auto& c : vec) {
@@ -203,61 +203,63 @@ vector<Complex> rangeSearch(const vector<Complex>& vec, double m1, double m2) {
 int main() {
     vector<Complex> vec = {
         Complex(1, 2), Complex(3, 4), Complex(5, 6),
-        Complex(1, 2), Complex(7, 8), Complex(9, 10)
+        Complex(1, 2), Complex(7, 8), Complex(9, 10),
+        Complex(2, 9), Complex(1, 8), Complex(3, 9),
+        Complex(6, 6), Complex(7, 3), Complex(9, 11)
     };
 
-    cout << "Ô­Ê¼¸´ÊıÏòÁ¿£º ";
+    cout << "åŸå§‹å¤æ•°å‘é‡ï¼š ";
     for (const auto& c : vec) {
         cout << c << " ";
     }
     cout << endl;
 
-    // ÖÃÂÒ
+    // ç½®ä¹±
     shuffle(vec);
-    cout << "ÖÃÂÒ²Ù×÷ºóµÄ¸´ÊıÏòÁ¿: ";
+    cout << "ç½®ä¹±æ“ä½œåçš„å¤æ•°å‘é‡: ";
     for (const auto& c : vec) {
         cout << c << " ";
     }
     vector<Complex> vec_unsorted = vec;
     cout << endl;
 
-    // ²éÕÒ
+    // æŸ¥æ‰¾
     Complex target(1, 2);
     int index = find(vec, target);
     if (index != -1) {
-        cout << "²éµ½ " << target << "Ë÷ÒıÊÇ£º" << index << endl;
+        cout << "æŸ¥åˆ° " << target << "ç´¢å¼•æ˜¯ï¼š" << index << endl;
     }
     else {
-        cout << "ÎŞ·¨²éµ½ " << target << endl;
+        cout << "æ— æ³•æŸ¥åˆ° " << target << endl;
     }
 
-    // ²åÈë
+    // æ’å…¥
     Complex newComplex(5, 6);
     insert(vec, newComplex);
-    cout << "²åÈë1+2iºó£º " << newComplex << ": ";
+    cout << "æ’å…¥1+2iåï¼š " << newComplex << ": ";
     for (const auto& c : vec) {
         cout << c << " ";
     }
     cout << endl;
 
-    // É¾³ı
+    // åˆ é™¤
     remove(vec, target);
-    cout << "É¾³ı1+2iºó£º" << target << ": ";
+    cout << "åˆ é™¤1+2iåï¼š" << target << ": ";
     for (const auto& c : vec) {
         cout << c << " ";
     }
     cout << endl;
 
-    // Î¨Ò»»¯
+    // å”¯ä¸€åŒ–
     unique(vec);
-    cout << "Î¨Ò»»¯ºó£º ";
+    cout << "å”¯ä¸€åŒ–åï¼š ";
     for (const auto& c : vec) {
         cout << c << " ";
     }
     cout << endl;
 
 
-    // ÂÒĞòÅÅĞò£º
+    // ä¹±åºæ’åºï¼š
     vector<Complex> vecBubble = vec_unsorted;
     vector<Complex> vecMerge = vec_unsorted;
 
@@ -266,39 +268,39 @@ int main() {
     start = clock();
     bubbleSort(vecBubble);
     end = clock();
-    cout << "ÂÒĞòµÄÆğÅİÅÅĞòÊ±¼ä: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
+    cout << "ä¹±åºçš„èµ·æ³¡æ’åºæ—¶é—´: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
 
     start = clock();
-    mergeSort(vecMerge, 0, vecMerge.size() - 1);
+    mergeSort(vecMerge, 0, vecMerge.size() - 1);Â 
     end = clock();
-    cout << "ÂÒĞòµÄ¹é²¢ÅÅĞòÊ±¼ä: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
+    cout << "ä¹±åºçš„å½’å¹¶æ’åºæ—¶é—´: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
 
-    //Ë³ĞòÅÅĞò£º
+    //é¡ºåºæ’åºï¼š
     start = clock();
     bubbleSort(vecBubble);
     end = clock();
-    cout << "Ë³ĞòµÄÆğÅİÅÅĞòÊ±¼ä: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
+    cout << "é¡ºåºçš„èµ·æ³¡æ’åºæ—¶é—´: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
 
     start = clock();
     mergeSort(vecMerge, 0, vecMerge.size() - 1);
     end = clock();
-    cout << "Ë³ĞòµÄ¹é²¢ÅÅĞòÊ±¼ä: " << 100000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
+    cout << "é¡ºåºçš„å½’å¹¶æ’åºæ—¶é—´: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;Â 
 
-    //ÄæĞòÅÅĞò£º
+    //é€†åºæ’åºï¼š
     reverseComplex(vecBubble);
     reverseComplex(vecMerge);
     start = clock();
     bubbleSort(vecBubble);
     end = clock();
-    cout << "ÄæĞòµÄÆğÅİÅÅĞòÊ±¼ä: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
+    cout << "é€†åºçš„èµ·æ³¡æ’åºæ—¶é—´: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
 
     start = clock();
     mergeSort(vecMerge, 0, vecMerge.size() - 1);
     end = clock();
-    cout << "ÄæĞòµÄ¹é²¢ÅÅĞòÊ±¼ä: " << 100000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
+    cout << "é€†åºçš„å½’å¹¶æ’åºæ—¶é—´: " << 1000 * double(end - start) / CLOCKS_PER_SEC << "ms" << endl;
 
 
-    // Çø¼ä²éÕÒ
+    // åŒºé—´æŸ¥æ‰¾
     double m1 = 4.0, m2 = 9.0;
     vector<Complex> rangeResult = rangeSearch(vecMerge, m1, m2);
     cout << "Range search [" << m1 << ", " << m2 << "): ";
