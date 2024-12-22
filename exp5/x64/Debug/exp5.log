@@ -1,0 +1,12 @@
+﻿  main.cpp
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(11,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(23,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(37,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(116,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(148): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(149): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(156): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(157): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(164): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\MSI-NB\source\repos\exp5\main.cpp(165): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  exp5.vcxproj -> C:\Users\MSI-NB\source\repos\exp5\x64\Debug\exp5.exe
